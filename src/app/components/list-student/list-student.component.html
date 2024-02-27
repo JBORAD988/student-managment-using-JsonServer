@@ -1,0 +1,31 @@
+<div class="row">
+<!--  <div class="col-20">-->
+    <ag-grid-angular
+      style="max-width: 100%;height: 800px; "
+      class="ag-theme-quartz"
+      [rowData]="StudentList"
+      [columnDefs]="colDefs"
+      [defaultColDef]="defaultColDef"
+      (gridReady)="onGridReady($event)"
+      [rowSelection]="rowSelection"
+      [suppressRowClickSelection]="true"
+      [pagination]="true"
+      [paginationPageSizeSelector]="[5,10,15,20,25,50,100,200]"
+      [paginationPageSize]="20"
+
+    ></ag-grid-angular>
+
+    <!--      rowSelection="multiple"  // we also use this on multi row selection-->
+    <!--    [suppressRowClickSelection]="true"  // this is use in multi-selection without it if you by chance click outside without this all selection will gone-->
+    <!--    [paginationPageSize]="5" // this is default number of rows shows in page-->
+<!--    class="ag-theme-quartz-auto-dark"-->
+
+<!--  </div>-->
+</div>
+
+<button class="btn btn-info"
+        (click)="onBtnExport()"
+        style="margin-bottom: 5px; font-weight: bold; ">
+  Export to Excel
+  <!--  // Download as CSV Excel File-->
+</button>
